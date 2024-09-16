@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Saludo</title>
+</head>
+<body>
+    <h1 th:text="'Hollii, ' + ${saludo.nombre} + '!'"></h1>
+    <form action="/saludo" method="post">
+        <label for="nombre">Ingresa tu nombre:</label>
+        <input type="text" id="nombre" name="nombre" />
+        <button type="submit">Saludame</button>
+    </form>
+</body>
+</html>
+
