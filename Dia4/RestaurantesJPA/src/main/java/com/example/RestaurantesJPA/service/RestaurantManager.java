@@ -13,7 +13,7 @@ import java.util.Optional;
 @Service
 public class RestaurantManager {
 
-    // Plato
+    //--------------------- Platos -----------------------------
     @Autowired
     private PlatoRepository platoRepository;
 
@@ -46,7 +46,7 @@ public class RestaurantManager {
         platoRepository.deleteById(id);
     }
 
-    // Mesa
+    //--------------------- Mesas -----------------------------
     @Autowired
     private MesaRepository mesaRepository;
 
@@ -68,7 +68,6 @@ public class RestaurantManager {
     //Actualizar una mesa por ID
     public Mesa actualizarMesa(Integer id, Mesa mesaDetalles){
         Mesa mesa = mesaRepository.findById(id).orElseThrow();
-        mesa.setNumero_mesa(mesaDetalles.getNumero_mesa());
         mesa.setOcupada(mesaDetalles.isOcupada());
         return mesaRepository.save(mesa);
     }

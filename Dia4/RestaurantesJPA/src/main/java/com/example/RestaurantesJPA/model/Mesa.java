@@ -9,7 +9,9 @@ public class Mesa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Column(unique = true)
     private int numero_mesa;
+
     private boolean ocupada;
 
     public Mesa() {
